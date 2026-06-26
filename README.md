@@ -2,98 +2,99 @@
 
 ## 📌 Project Overview
 
-This project predicts future Electric Vehicle (EV) adoption using Machine Learning. It analyzes historical EV registration data, performs feature engineering, trains a Random Forest Regressor with hyperparameter tuning, and forecasts EV demand for the next 36 months at the county level.
+EV Vehicle Demand Prediction is a Machine Learning project that forecasts future Electric Vehicle (EV) adoption using historical EV registration data. The project performs data preprocessing, feature engineering, time-series forecasting, and model optimization using Random Forest Regression.
 
-The project also includes a FastAPI-based REST API that allows users to obtain EV demand predictions through HTTP requests.
+To make predictions accessible in real time, the trained model is deployed through a FastAPI REST API and hosted on Render with interactive Swagger documentation.
 
 ---
 
 ## 🚀 Features
 
-- Data cleaning and preprocessing
-- Exploratory Data Analysis (EDA)
-- Outlier detection and treatment using IQR
-- Feature engineering for time-series forecasting
-- Lag feature creation
-- Rolling statistics
-- Growth rate and trend calculation
-- Random Forest Regression model
-- Hyperparameter tuning using RandomizedSearchCV
-- Model evaluation using MAE, RMSE, and R² Score
-- 36-month EV demand forecasting
-- Feature importance visualization
-- FastAPI REST API for real-time predictions
-- Model serialization using Joblib
+* Data cleaning and preprocessing
+* Exploratory Data Analysis (EDA)
+* Outlier detection and treatment using IQR
+* Time-series feature engineering
+* Lag feature creation
+* Rolling statistics and trend analysis
+* Growth rate calculation
+* Random Forest Regression model
+* Hyperparameter tuning using RandomizedSearchCV
+* Model evaluation using MAE, RMSE, and R² Score
+* 36-month EV demand forecasting
+* Feature importance visualization
+* FastAPI REST API deployment
+* Cloud deployment on Render
+* Interactive Swagger API documentation
 
 ---
 
 ## 📊 Dataset
 
-The dataset contains historical monthly EV registration information including:
+The dataset contains historical EV registration information including:
 
-- County
-- State
-- Date
-- Battery Electric Vehicles (BEVs)
-- Plug-in Hybrid Electric Vehicles (PHEVs)
-- Electric Vehicle Total
-- Non-Electric Vehicle Total
-- Total Vehicles
-- Percent Electric Vehicles
+* County
+* State
+* Date
+* Battery Electric Vehicles (BEVs)
+* Plug-in Hybrid Electric Vehicles (PHEVs)
+* Electric Vehicle Total
+* Non-Electric Vehicle Total
+* Total Vehicles
+* Percent Electric Vehicles
 
 ---
 
 ## ⚙️ Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- Joblib
-- FastAPI
-- Uvicorn
-- Jupyter Notebook
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-learn
+* FastAPI
+* Uvicorn
+* Joblib
+* Jupyter Notebook
+* Render
 
 ---
 
 ## 🧠 Machine Learning Pipeline
 
-1. Load dataset
-2. Clean missing values
-3. Detect and cap outliers
-4. Convert data types
-5. Feature engineering
-6. Create lag features
-7. Create rolling averages
-8. Calculate percentage growth
-9. Generate cumulative EV growth
-10. Train Random Forest Regressor
-11. Hyperparameter tuning using RandomizedSearchCV
-12. Evaluate model
-13. Forecast EV adoption
-14. Save trained model
-15. Serve predictions through FastAPI
+1. Load and preprocess dataset
+2. Handle missing values
+3. Detect and cap outliers using IQR
+4. Convert and validate data types
+5. Perform feature engineering
+6. Generate lag features
+7. Calculate rolling averages
+8. Compute growth metrics
+9. Train Random Forest Regressor
+10. Hyperparameter tuning with RandomizedSearchCV
+11. Evaluate model performance
+12. Forecast future EV demand
+13. Save trained model using Joblib
+14. Serve predictions through FastAPI
 
 ---
 
 ## 📈 Model Features
 
-The model uses the following features:
+### Input Features
 
-- months_since_start
-- county_encoded
-- ev_total_lag1
-- ev_total_lag2
-- ev_total_lag3
-- ev_total_roll_mean_3
-- ev_total_pct_change_1
-- ev_total_pct_change_3
-- ev_growth_slope
+* months_since_start
+* county_encoded
+* ev_total_lag1
+* ev_total_lag2
+* ev_total_lag3
+* ev_total_roll_mean_3
+* ev_total_pct_change_1
+* ev_total_pct_change_3
+* ev_growth_slope
 
-Target Variable:
+### Target Variable
 
-- Electric Vehicle (EV) Total
+* Electric Vehicle (EV) Total
 
 ---
 
@@ -101,47 +102,56 @@ Target Variable:
 
 The model is evaluated using:
 
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- R² Score
+* Mean Absolute Error (MAE)
+* Root Mean Squared Error (RMSE)
+* R² Score
 
 ---
 
-## 🌐 FastAPI
+## 🏆 Project Outcomes
 
-The project includes a REST API built using FastAPI.
-
-### Start the API
-
-```bash
-uvicorn app:app --reload
-```
-
-Open Swagger UI:
-
-```
-http://127.0.0.1:8000/docs
-```
+* Built a Random Forest Regression model for EV demand forecasting.
+* Engineered lag-based and rolling-window features to improve predictive performance.
+* Forecasted EV adoption trends for the next 36 months.
+* Developed a FastAPI REST API for real-time predictions.
+* Successfully deployed the model on Render.
+* Enabled API testing through interactive Swagger documentation.
 
 ---
 
-## API Endpoints
+## 🌍 Live Deployment
 
-### Home
+### Live API
 
-```
+https://ev-forecast-api.onrender.com
+
+### Swagger Documentation
+
+https://ev-forecast-api.onrender.com/docs
+
+### GitHub Repository
+
+https://github.com/Kashak28/EV-Vehicle-Demand-Prediction
+
+---
+
+## 🌐 API Endpoints
+
+### Home Endpoint
+
+```http
 GET /
 ```
 
-Returns the API status.
+Returns API status.
 
-### Predict EV Demand
+### Prediction Endpoint
 
-```
+```http
 POST /predict
 ```
 
-Example Request
+### Example Request
 
 ```json
 {
@@ -157,7 +167,7 @@ Example Request
 }
 ```
 
-Example Response
+### Example Response
 
 ```json
 {
@@ -169,7 +179,7 @@ Example Response
 
 ## 📂 Project Structure
 
-```
+```text
 EV-Vehicle-Demand-Prediction/
 │
 ├── EV Forecasting.ipynb
@@ -182,45 +192,53 @@ EV-Vehicle-Demand-Prediction/
 
 ---
 
-## ▶️ Installation
+## ▶️ Installation & Setup
 
-Clone the repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/EV-Vehicle-Demand-Prediction.git
+git clone https://github.com/Kashak28/EV-Vehicle-Demand-Prediction.git
+cd EV-Vehicle-Demand-Prediction
 ```
 
-Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the API
+### Run FastAPI Server
 
 ```bash
 uvicorn app:app --reload
+```
+
+### Open Swagger UI
+
+```text
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
 ## 💡 Future Improvements
 
-- Accept county names instead of encoded values
-- Deploy the API on Render or Azure
-- Build an interactive Streamlit dashboard
-- Integrate real-time EV registration data
-- Add charging station and population data for improved forecasting
+* Accept county names instead of encoded values
+* Build an interactive Streamlit dashboard
+* Integrate real-time EV registration data
+* Add charging station and population data for improved forecasting
+* Deploy on Azure Cloud for enterprise-scale usage
 
 ---
 
 ## 📌 Real-World Applications
 
-- Government EV policy planning
-- Charging infrastructure development
-- Power grid demand forecasting
-- Automotive market analysis
-- Smart city planning
+* Government EV policy planning
+* Charging infrastructure development
+* Power grid demand forecasting
+* Automotive market analysis
+* Smart city planning
+* Sustainable transportation research
 
 ---
 
@@ -228,6 +246,6 @@ uvicorn app:app --reload
 
 **Kashak Tripathi**
 
-B.Tech Computer Science & Engineering
+B.Tech Computer Science & Engineering, PSIT Kanpur
 
-Machine Learning | Data Science | Python | FastAPI
+Machine Learning | Data Science | Python | FastAPI | Scikit-learn
