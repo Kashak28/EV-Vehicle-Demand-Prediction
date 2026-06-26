@@ -145,15 +145,15 @@ Example Request
 
 ```json
 {
-  "months_since_start": 45,
-  "county_encoded": 10,
-  "ev_total_lag1": 1500,
-  "ev_total_lag2": 1450,
-  "ev_total_lag3": 1400,
-  "ev_total_roll_mean_3": 1450,
-  "ev_total_pct_change_1": 0.03,
-  "ev_total_pct_change_3": 0.08,
-  "ev_growth_slope": 60
+  "months_since_start": 97.0,
+  "county_encoded": 270.0,
+  "ev_total_lag1": 1.0,
+  "ev_total_lag2": 1.0,
+  "ev_total_lag3": 1.0,
+  "ev_total_roll_mean_3": 1.0,
+  "ev_total_pct_change_1": 0.0,
+  "ev_total_pct_change_3": 0.0,
+  "ev_growth_slope": 1.0
 }
 ```
 
@@ -161,7 +161,7 @@ Example Response
 
 ```json
 {
-  "predicted_ev_count": 1678.42
+  "predicted_ev_count": 1
 }
 ```
 
